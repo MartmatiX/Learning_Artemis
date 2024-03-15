@@ -9,13 +9,23 @@ public class MessageSender {
 
     private final JmsTemplate jmsTemplate;
 
+    private String destination;
+    private String message;
+
     @Autowired
     public MessageSender(JmsTemplate jmsTemplate) {
         this.jmsTemplate = jmsTemplate;
     }
 
-    public void sendMessage(String destination, String message) {
-        jmsTemplate.convertAndSend(destination, message);
+    public void sendMessage() {
+        jmsTemplate.convertAndSend(this.destination, this.message);
     }
 
+    public void setDestination(String destination) {
+        this.destination = destination;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
 }

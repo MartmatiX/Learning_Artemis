@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Producer</title>
+</head>
+<body>
+
+    <form th:action="@{/sendMessage}" method="POST">
+        <label for="queueName">Queue Name: </label><input type="text" name="queueName" id="queueName">
+        <label for="message">Message: </label><input type="text" name="message" id="message">
+        <input type="submit" value="Send message">
+    </form>
+
+</body>
+</html>
