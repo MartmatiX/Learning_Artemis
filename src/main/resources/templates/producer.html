@@ -11,8 +11,8 @@
 
 <div class="w-100 d-flex justify-content-center pt-5">
     <form th:action="@{/sendMessage}" method="POST" class="d-flex flex-column w-25 justify-content-center">
-        <label class="text-light" for="queueName">Queue Name: </label><input class="mt-1 mb-3" type="text" name="queueName" id="queueName">
-        <label class="text-light" for="message">Message: </label><input class="mt-1 mb-3" type="text" name="message" id="message">
+        <label class="text-light" for="queueName">Queue Name: </label><input class="mt-1 mb-3 rounded" type="text" name="queueName" id="queueName">
+        <label class="text-light" for="message">Message: </label><input class="mt-1 mb-3 rounded" type="text" name="message" id="message">
         <input class="w-50 align-self-center btn btn-light p-1" type="submit" value="Send message">
     </form>
 </div>
