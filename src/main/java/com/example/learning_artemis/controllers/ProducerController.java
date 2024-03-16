@@ -9,13 +9,13 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller(value = "/")
-public class GuiController {
+public class ProducerController {
 
     private MessageSender messageSender;
 
     @GetMapping
     public String renderForm() {
-        return "index";
+        return "producer";
     }
 
     @PostMapping(path = "/sendMessage")
