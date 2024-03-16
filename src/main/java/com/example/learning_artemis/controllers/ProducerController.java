@@ -8,12 +8,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
-@Controller(value = "/")
+@Controller
 public class ProducerController {
 
     private MessageSender messageSender;
 
-    @GetMapping
+    @GetMapping(path = "/producer")
     public String renderForm() {
         return "producer";
     }
@@ -24,9 +24,8 @@ public class ProducerController {
             messageSender.setDestination(messageForm.getQueueName());
             messageSender.setMessage(messageForm.getMessage());
             messageSender.sendMessage();
-            System.out.println("Message sent to queue");
         }
-        return "redirect:/";
+        return "redirect:/producer";
     }
 
     private boolean isFormValid(MessageForm messageForm) {

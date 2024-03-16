@@ -18,7 +18,12 @@ public class MessageSender {
     }
 
     public void sendMessage() {
-        jmsTemplate.convertAndSend(this.destination, this.message);
+        try {
+            jmsTemplate.convertAndSend(this.destination, this.message);
+            System.out.println("Message sent to queue");
+        } catch (Exception e) {
+            System.err.println("Unable to send message!\n[" + e + "]");
+        }
     }
 
     public void setDestination(String destination) {
